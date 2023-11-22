@@ -14,7 +14,6 @@ import "../style/index.css";
         github: null,
         linkedin: null,
         instagram: null,
-
         name: null,
         lastName: null,
         role: null,
