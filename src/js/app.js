@@ -32,15 +32,43 @@ function render(variables = {}) {
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
+
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+
+          <h1>
+          ${variables.name == null ? "Name" : variables.name} ${
+    variables.lastName == null ? "Last Name" : variables.lastName
+  }
+          </h1>
+
+          <h2>${variables.role == null ? "Role" : variables.role}</h2>
+
+          <h3>${variables.city == null ? "City" : variables.city}, ${
+    variables.country == null ? "Country" : variables.country
+  }</h3>
+
+          <ul class="position- ${variables.socialMediaPosition}">
+
+            <li><a href="https://twitter.com/${
+              variables.twitter == null ? "4geeksacademycl" : variables.twitter
+            }"><i class="fab fa-twitter"></i></a></li>
+
+            <li><a href="https://github.com/${
+              variables.github == null ? "4GeeksAcademy" : variables.github
+            }"><i class="fab fa-github"></i></a></li>
+
+            <li><a href="https://linkedin.com/${
+              variables.linkedin == null
+                ? "school/4geeks-academy-latam/"
+                : variables.linkedin
+            }"><i class="fab fa-linkedin"></i></a></li>
+
+            <li><a href="https://instagram.com/${
+              variables.instagram == null
+                ? "4geeksacademycl"
+                : variables.instagram
+            }"><i class="fab fa-instagram"></i></a></li>
+
           </ul>
         </div>
     `;
@@ -54,9 +82,11 @@ window.onload = function() {
     // if includeCover is true the algorithm should show the cover image
     includeCover: true,
     // this is the image's url that will be used as a background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background:
+      "https://img.freepik.com/premium-vector/rain-banana_62000-6.jpg",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL:
+      "https://i.pinimg.com/736x/88/f0/3d/88f03de22c4077d6a2738421d2e93a19.jpg",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
